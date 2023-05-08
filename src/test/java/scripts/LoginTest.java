@@ -43,7 +43,7 @@ public class LoginTest {
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/customer/account/login/");
 
-        // Instantiate the HomePage class to access its methods.
+
         Login loginPage = new Login(driver);
         loginPage.setCredentials(email, pass);
         System.out.println("paso el login");
