@@ -42,15 +42,12 @@ public class LoginTest {
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/customer/account/login/");
-
-
         Login loginPage = new Login(driver);
+        loginPage.setCredentials(email, pass);
 
-        HomePage homePage = loginPage.setCredentials(email, pass);
-        System.out.println("paso el login");
-
+        HomePage homePage = new HomePage(driver);
         String actualMsgText = homePage.getMsgText();
-        String expectedMsgText = "Welcome, Juan Saldaña!";
+        String expectedMsgText = "WELCOME, JUAN SALDAÑA!";
         assertEquals(expectedMsgText, actualMsgText);
     }
 }

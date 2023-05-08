@@ -14,20 +14,20 @@ public class Login {
         PageFactory.initElements(driver,this);
     }
 
-    @FindBy(xpath = "/html/body/div/div[2]/div[2]/div/div/div/form/div/div[2]/div[1]/ul/li[1]/div/input")
+    @FindBy(id = "email")
     public WebElement emailBox;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div[2]/div/div/div/form/div/div[2]/div[1]/ul/li[2]/div/input")
+    @FindBy(id = "pass")
     public static WebElement passBox;
 
-    @FindBy(xpath = "/html/body/div/div[2]/div[2]/div/div/div/form/div/div[2]/div[2]/button")
+    @FindBy(id = "send2")
     public static WebElement loginBtn;
 
-    public HomePage setCredentials (String email, String pass){
+    public void setCredentials (String email, String pass){
         emailBox.sendKeys(email);
         passBox.sendKeys(pass);
         loginBtn.click();
-        return new HomePage(driver);
+
     }
 
 }

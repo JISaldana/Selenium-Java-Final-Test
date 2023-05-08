@@ -1,4 +1,4 @@
-package scripts;
-
-public class CompareItemsTest {
-}
+//package scripts;
+//
+//public class CompareItemsTest {
+//}

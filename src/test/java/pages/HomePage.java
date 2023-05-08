@@ -12,7 +12,7 @@ public class HomePage {
 
     public HomePage(WebDriver driver) {
         HomePage.driver=driver;
-        PageFactory.initElements(driver, HomePage.class);
+        PageFactory.initElements(driver, this);
     }
 
     @FindBy(id = "select-language")
@@ -24,7 +24,7 @@ public class HomePage {
         langSelected.click();
     }
 
-    @FindBy(xpath = "/html/body/div/div[2]/div[1]/div/p")
+    @FindBy(className = "welcome-msg")
     public static WebElement welcomeMsg;
 
     public String getMsgText(){
@@ -46,17 +46,17 @@ public class HomePage {
     @FindBy(className = "skip-cart")
     public static WebElement cartBtn;
 
-    @FindBy(className = "level0 nav-1")
+    @FindBy(className = "nav-1")
     public static WebElement womenCategory;
-    @FindBy(className = "level0 nav-2")
+    @FindBy(className = "nav-2")
     public static WebElement menCategory;
-    @FindBy(className = "level0 nav-3")
+    @FindBy(className = "nav-3")
     public static WebElement accessoriesCategory;
-    @FindBy(className = "level0 nav-4")
+    @FindBy(className = "nav-4")
     public static WebElement hndCategory;
-    @FindBy(className = "level0 nav-5")
+    @FindBy(className = "nav-5")
     public static WebElement saleCategory;
-    @FindBy(className = "level0 nav-6")
+    @FindBy(className = "nav-6")
     public static WebElement vipCategory;
 
 
