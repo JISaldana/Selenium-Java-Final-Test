@@ -23,10 +23,11 @@ public class Login {
     @FindBy(xpath = "/html/body/div/div[2]/div[2]/div/div/div/form/div/div[2]/div[2]/button")
     public static WebElement loginBtn;
 
-    public void setCredentials (String email, String pass){
+    public HomePage setCredentials (String email, String pass){
         emailBox.sendKeys(email);
         passBox.sendKeys(pass);
         loginBtn.click();
+        return new HomePage(driver);
     }
 
 }

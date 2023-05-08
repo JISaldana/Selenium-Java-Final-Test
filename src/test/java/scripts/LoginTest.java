@@ -45,10 +45,9 @@ public class LoginTest {
 
 
         Login loginPage = new Login(driver);
-        loginPage.setCredentials(email, pass);
-        System.out.println("paso el login");
 
-        HomePage homePage = new HomePage(driver);
+        HomePage homePage = loginPage.setCredentials(email, pass);
+        System.out.println("paso el login");
 
         String actualMsgText = homePage.getMsgText();
         String expectedMsgText = "Welcome, Juan Saldaña!";

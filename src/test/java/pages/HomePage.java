@@ -11,9 +11,10 @@ public class HomePage {
     public static WebDriver driver;
 
     public HomePage(WebDriver driver) {
-        this.driver=driver;
-        PageFactory.initElements(driver,this);
+        HomePage.driver=driver;
+        PageFactory.initElements(driver, HomePage.class);
     }
+
     @FindBy(id = "select-language")
     private WebElement langDropdown;
 
@@ -29,8 +30,6 @@ public class HomePage {
     public String getMsgText(){
         return welcomeMsg.getText();
     }
-
-//null searchbar
 
     @FindBy(id = "search")
     public WebElement searchBar;
