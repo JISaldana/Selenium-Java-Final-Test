@@ -1,0 +1,56 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Test Suite" verbose="1">
+
+
+    <test name="name">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+<!--            <class name="scripts.{scriptName}"/>-->
+        </classes>
+    </test>
+
+    <test name="Check Price">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+            <class name="scripts.CheckPriceTest"/>
+        </classes>
+    </test>
+
+    <test name="Compare Items">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+            <class name="scripts.CompareItemsTest"/>
+        </classes>
+    </test>
+
+    <test name="Languages">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+            <class name="scripts.LanguagesTest"/>
+        </classes>
+    </test>
+
+    <test name="Login">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+            <class name="scripts.LoginTest"/>
+        </classes>
+    </test>
+
+    <test name="Tax Check">
+        <parameter name="parameterName" value="parameterValue" />
+        <parameter name="parameterName" value="parameterValue" />
+        <classes>
+            <class name="scripts.TaxCheckTest"/>
+        </classes>
+    </test>
+
+
+
+
+</suite>
