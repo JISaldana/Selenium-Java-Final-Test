@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ProductPage {
     private static WebDriver driver;
-    @FindBy (className = "button btn-cart")
+    @FindBy (className = "btn-cart")
     public static WebElement addCartBtn;
 
     public ProductPage(WebDriver driver) {

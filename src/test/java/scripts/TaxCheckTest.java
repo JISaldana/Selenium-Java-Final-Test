@@ -1,10 +1,7 @@
 package scripts;
 
-import dataProviders.LanguagesData;
-import dataProviders.LoginData;
-import dataProviders.ProductsData;
+import dataProviders.ProductData;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
@@ -33,7 +30,7 @@ public class TaxCheckTest {
         driver.quit();
     }
 
-    @Test(dataProvider = "products", dataProviderClass = ProductsData.class)
+    @Test(dataProvider = "products", dataProviderClass = ProductData.class)
     public void test(String productParam, String priceParam, String taxParam) throws Exception {
 
 
