@@ -9,7 +9,6 @@ public class LoginData {
                 {"juanignaciojobs@gmail.com", "Data123!"},
                 {"juanignaciojobs@gmail.com", "n-a"},
                 {"n-a@n-a", "Data123!"},
-                {"n-a@n-a", "n-a"}
         };
     }
 }

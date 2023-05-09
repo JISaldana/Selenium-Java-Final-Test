@@ -22,7 +22,7 @@ public class TaxCheckTest {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         ChromeOptions allowRemoteOrigins=new ChromeOptions();
         allowRemoteOrigins.addArguments("--remote-allow-origins=*");
-        driver = (WebDriver) new ChromeDriver(allowRemoteOrigins);
+        driver = new ChromeDriver(allowRemoteOrigins);
     }
 
     @AfterMethod
@@ -31,13 +31,12 @@ public class TaxCheckTest {
     }
 
     @Test(dataProvider = "products", dataProviderClass = ProductData.class)
-    public void test(String productParam, String priceParam, String taxParam) throws Exception {
+    public void taxCheck(String productParam, String priceParam, String taxParam) throws Exception {
 
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
 
-        // Instantiate the HomePage class to access its methods.
         HomePage homePage = new HomePage(driver);
         homePage.search(productParam);
         ProductSearchPage productSearchPage = homePage.search(productParam);

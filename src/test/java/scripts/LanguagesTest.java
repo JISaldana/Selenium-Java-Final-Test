@@ -31,16 +31,14 @@ public class LanguagesTest {
     }
 
     @Test(dataProvider = "languages", dataProviderClass = LanguagesData.class)
-    public void test(String lang, String welcome, String searchtext, String account, String cart, String women, String men, String accessories, String hnd, String sale, String vip) throws Exception {
-
+    public void languagesTest(String lang, String welcome, String searchtext, String account, String cart, String women, String men, String accessories, String hnd, String sale, String vip) throws Exception {
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com");
 
-        // Instantiate the HomePage class to access its methods.
         HomePage homePage = new HomePage(driver);
-
         homePage.selectLang(lang);
+
         String welcomeText = homePage.welcomeMsg.getText();
         assertEquals(welcomeText, welcome);
 

@@ -7,10 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import pages.Cart;
-import pages.HomePage;
-import pages.ProductPage;
-import pages.ProductSearchPage;
+import pages.*;
 
 import static org.testng.AssertJUnit.assertEquals;
 
@@ -32,10 +29,9 @@ public class CheckPriceTest {
     }
 
     @Test(dataProvider = "products", dataProviderClass = ProductData.class)
-    public void test(String productParam, String priceParam, String taxParam) throws Exception {
+    public void priceCheck(String productParam, String priceParam, String taxParam) throws Exception {
 
 
-        // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
 
         // Instantiate the HomePage class to access its methods.
@@ -45,5 +41,7 @@ public class CheckPriceTest {
         ProductPage productPage = productSearchPage.clickProduct(productParam);
         Cart cart = productPage.addItem();
         assertEquals(cart.price.getText(), priceParam);
+
+
     }
 }

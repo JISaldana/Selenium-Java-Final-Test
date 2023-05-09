@@ -1,9 +1,9 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class ProductSearchPage {
@@ -14,6 +14,7 @@ public class ProductSearchPage {
         PageFactory.initElements(driver, this);
     }
 
+//    @Step("Go to product page")
     public ProductPage clickProduct(String product) {
         WebElement productLink = driver.findElement(By.linkText(product)); // Finds the WebElement for the product link using the product name
         productLink.click(); // Clicks on the product link

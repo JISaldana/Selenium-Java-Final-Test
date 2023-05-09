@@ -1,6 +1,7 @@
 package scripts;
 
 import dataProviders.LoginData;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,7 +33,7 @@ public class LoginTest {
     }
 
     @Test(dataProvider = "credentials", dataProviderClass = LoginData.class)
-    public void test(String email, String pass) throws Exception {
+    public void loginTest(String email, String pass) throws Exception {
 
 
         // Navigate to the home page of the web application being tested.

@@ -1,11 +1,12 @@
 package pages;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import dataProviders.LanguagesData;
+
 
 public class HomePage {
     public static WebDriver driver;
@@ -16,8 +17,9 @@ public class HomePage {
     }
 
     @FindBy(id = "select-language")
-    private WebElement langDropdown;
+    public WebElement langDropdown;
 
+//    @Step("Select language")
     public void selectLang(String lang) {
         langDropdown.click();
         WebElement langSelected = driver.findElement(By.xpath("//option[.='" + lang + "']"));
@@ -25,7 +27,7 @@ public class HomePage {
     }
 
     @FindBy(className = "welcome-msg")
-    public static WebElement welcomeMsg;
+    public WebElement welcomeMsg;
 
     public String getMsgText(){
         return welcomeMsg.getText();
@@ -34,6 +36,7 @@ public class HomePage {
     @FindBy(id = "search")
     public WebElement searchBar;
 
+//    @Step("Search the product")
     public ProductSearchPage search(String product){
         searchBar.sendKeys(product);
         searchBar.sendKeys(Keys.ENTER);
@@ -41,23 +44,23 @@ public class HomePage {
     }
 
     @FindBy(className = "skip-account")
-    public static WebElement accountBtn;
+    public WebElement accountBtn;
 
     @FindBy(className = "skip-cart")
-    public static WebElement cartBtn;
+    public WebElement cartBtn;
 
     @FindBy(className = "nav-1")
-    public static WebElement womenCategory;
+    public WebElement womenCategory;
     @FindBy(className = "nav-2")
-    public static WebElement menCategory;
+    public WebElement menCategory;
     @FindBy(className = "nav-3")
-    public static WebElement accessoriesCategory;
+    public  WebElement accessoriesCategory;
     @FindBy(className = "nav-4")
-    public static WebElement hndCategory;
+    public WebElement hndCategory;
     @FindBy(className = "nav-5")
-    public static WebElement saleCategory;
+    public WebElement saleCategory;
     @FindBy(className = "nav-6")
-    public static WebElement vipCategory;
+    public WebElement vipCategory;
 
 
 
