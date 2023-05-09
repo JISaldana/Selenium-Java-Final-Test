@@ -1,14 +1,6 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 <suite name="Test Suite" verbose="1">
 
-<!--Formato-->
-<!--    <test name="name">-->
-<!--        <classes>-->
-<!--            <class name="scripts.{scriptName}"/>-->
-<!--        </classes>-->
-<!--    </test>-->
-
-
     <test name="Check Price">
         <classes>
             <class name="scripts.CheckPriceTest"/>
@@ -21,11 +13,11 @@
         </classes>
     </test>
 
-<!--    <test name="Compare Items">-->
-<!--        <classes>-->
-<!--            <class name="scripts.CompareItemsTest"/>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <test name="Compare Items">
+        <classes>
+            <class name="scripts.CompareItemsTest"/>
+        </classes>
+    </test>
 
     <test name="Languages">
         <classes>

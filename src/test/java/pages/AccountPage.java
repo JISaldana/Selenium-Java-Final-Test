@@ -17,6 +17,14 @@ public class AccountPage {
     @FindBy (css = ".block-content:nth-child(2) span > span")
     public WebElement compareBtn;
 
+    @FindBy (linkText = "Clear All")
+    public WebElement clearAllBtn;
+
+    public void clickClearAllBtn() {
+        clearAllBtn.click();
+        driver.switchTo().alert().accept();
+    }
+
     public CompareListPopUp clickCompareBtn(){
         compareBtn.click();
         return new CompareListPopUp(driver);

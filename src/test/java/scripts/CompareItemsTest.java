@@ -33,11 +33,13 @@ public class CompareItemsTest {
     }
 
     @Test(dataProvider = "productCompare", dataProviderClass = CompareProductData.class)
-    public void taxCheck(String productParam, String productParam2) throws Exception {
+    public void compareItemsTest(String productParam, String productParam2) throws Exception {
 
         driver.get("http://magento-demo.lexiconn.com/customer/account/login/");
         Login loginPage = new Login(driver);
         loginPage.setCredentials("juanignaciojobs@gmail.com", "Data123!");
+        AccountPage accountPage = new AccountPage(driver);
+        accountPage.clickClearAllBtn();
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
@@ -52,10 +54,7 @@ public class CompareItemsTest {
         productPage.addToCompare();
 
         driver.get("http://magento-demo.lexiconn.com/customer/account/");
-
-        AccountPage accountPage = new AccountPage(driver);
         CompareListPopUp compareListPopUp = accountPage.clickCompareBtn();
-
 
         // Get all window handles
         Set<String> windowHandles = driver.getWindowHandles();
@@ -68,12 +67,14 @@ public class CompareItemsTest {
                 break;
             }
         }
+
         String item1 = compareListPopUp.item1.getText();
         String item2 = compareListPopUp.item2.getText();
         assertEquals(productParam, item1);
         System.out.println("First item asserted");
         assertEquals(productParam2, item2);
-        System.out.println("First item asserted");
+        System.out.println("Second item asserted");
+
 
 
     }
