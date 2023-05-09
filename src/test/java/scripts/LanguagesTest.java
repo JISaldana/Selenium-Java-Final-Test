@@ -43,34 +43,34 @@ public class LanguagesTest {
         homePage.selectLang(lang);
 
         String welcomeText = homePage.welcomeMsg.getText();
-        assertEquals(welcomeText, welcome);
+        assertEquals(welcome, welcomeText);
 
-        String accountText = homePage.searchBar.getAttribute("placeholder");
-        assertEquals(accountText, searchtext);
+        String searchBarText = homePage.searchBar.getAttribute("placeholder");
+        assertEquals(searchtext, searchBarText);
 
-        String expectedText = homePage.accountBtn.getText();
-        assertEquals(expectedText, account);
+        String accountText = homePage.accountBtn.getText();
+        assertEquals(account, accountText);
 
         String cartText = homePage.cartBtn.getText();
-        assertEquals(cartText, cart);
+        assertEquals(cart, cartText);
 
         String womenText = homePage.womenCategory.getText();
-        assertEquals(womenText, women);
+        assertEquals(women, womenText);
 
         String menText = homePage.menCategory.getText();
-        assertEquals(menText, men);
+        assertEquals(men, menText);
 
         String accessoriesText = homePage.accessoriesCategory.getText();
-        assertEquals(accessoriesText, accessories);
+        assertEquals(accessories, accessoriesText);
 
         String hndText = homePage.hndCategory.getText();
-        assertEquals(hndText, hnd);
+        assertEquals(hnd, hndText);
 
         String saleText = homePage.saleCategory.getText();
-        assertEquals(saleText, sale);
+        assertEquals(sale, saleText);
 
         String vipText = homePage.vipCategory.getText();
-        assertEquals(vipText, vip);
+        assertEquals(vip, vipText);
 
 
 
