@@ -1,6 +1,7 @@
 package scripts;
 
 import dataProviders.LanguagesData;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -30,7 +31,8 @@ public class LanguagesTest {
         driver.quit();
     }
 
-    @Test(dataProvider = "languages", dataProviderClass = LanguagesData.class)
+    @Description ("This test check the language change functionality of the Website")
+    @Test(testName = ("Languages Test "), dataProvider = "languages", dataProviderClass = LanguagesData.class)
     public void languagesTest(String lang, String welcome, String searchtext, String account, String cart, String women, String men, String accessories, String hnd, String sale, String vip) throws Exception {
 
         // Navigate to the home page of the web application being tested.

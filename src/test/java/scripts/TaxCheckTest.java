@@ -1,6 +1,7 @@
 package scripts;
 
 import dataProviders.ProductData;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,7 +9,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.*;
-
 import static org.testng.AssertJUnit.assertEquals;
 
 
@@ -29,8 +29,8 @@ public class TaxCheckTest {
     public void tearDown() {
         driver.quit();
     }
-
-    @Test(dataProvider = "products", dataProviderClass = ProductData.class)
+    @Description("This test verifies the correct display of taxes in the cart.")
+    @Test(testName = ("Tax Check "), dataProvider = "products", dataProviderClass = ProductData.class)
     public void taxCheck(String productParam, String priceParam, String taxParam) throws Exception {
 
 

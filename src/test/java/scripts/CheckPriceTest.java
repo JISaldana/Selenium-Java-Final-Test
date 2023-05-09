@@ -1,6 +1,7 @@
 package scripts;
 
 import dataProviders.ProductData;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -28,7 +29,8 @@ public class CheckPriceTest {
         driver.quit();
     }
 
-    @Test(dataProvider = "products", dataProviderClass = ProductData.class)
+    @Description("This test verifies the correct display of prices in the cart.")
+    @Test(testName = ("Price Check Test "),dataProvider = "products", dataProviderClass = ProductData.class)
     public void priceCheck(String productParam, String priceParam, String taxParam) throws Exception {
 
         // Navigate to the home page of the web application being tested.

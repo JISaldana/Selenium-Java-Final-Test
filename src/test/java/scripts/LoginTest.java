@@ -1,7 +1,12 @@
 package scripts;
 
-import dataProviders.LoginData;
 
+import dataProviders.LoginData;
+import io.qameta.allure.AllureId;
+import io.qameta.allure.Description;
+
+import io.qameta.allure.Param;
+import org.junit.jupiter.api.DisplayName;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -18,7 +23,6 @@ public class LoginTest {
 
     private WebDriver driver;
 
-
     @BeforeMethod
     public void setUp() {
         System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
@@ -32,7 +36,8 @@ public class LoginTest {
         driver.quit();
     }
 
-    @Test(dataProvider = "credentials", dataProviderClass = LoginData.class)
+    @Description("This test should try to log in to the website with the specified credentials")
+    @Test(testName = "Login Test ",dataProvider = "credentials", dataProviderClass = LoginData.class)
     public void loginTest(String email, String pass) throws Exception {
 
 

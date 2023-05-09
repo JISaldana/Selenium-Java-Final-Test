@@ -1,6 +1,7 @@
 package scripts;
 
 import dataProviders.CompareProductData;
+import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -32,15 +33,16 @@ public class CompareItemsTest {
         driver.quit();
     }
 
-    @Test(dataProvider = "productCompare", dataProviderClass = CompareProductData.class)
+    @Description("This test verifies the correct display of the compare list popup")
+    @Test(testName = ("Comparison list test "), dataProvider = "productCompare", dataProviderClass = CompareProductData.class)
     public void compareItemsTest(String productParam, String productParam2) throws Exception {
 
         driver.get("http://magento-demo.lexiconn.com/customer/account/login/");
+
+        // Login into the system
         Login loginPage = new Login(driver);
         loginPage.setCredentials("juanignaciojobs@gmail.com", "Data123!");
         AccountPage accountPage = new AccountPage(driver);
-        // Clear all data before start
-        accountPage.clickClearAllBtn();
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
@@ -61,7 +63,6 @@ public class CompareItemsTest {
 
         // Get all window handles
         Set<String> windowHandles = driver.getWindowHandles();
-
         // Switch to the new window
         String parentWindowHandle = driver.getWindowHandle();
         for (String handle : windowHandles) {
@@ -74,9 +75,11 @@ public class CompareItemsTest {
         String item1 = compareListPopUp.item1.getText();
         String item2 = compareListPopUp.item2.getText();
         assertEquals(productParam, item1);
-        System.out.println("First item asserted");
         assertEquals(productParam2, item2);
-        System.out.println("Second item asserted");
+
+        //Clear compare list
+        driver.switchTo().window(parentWindowHandle);
+        accountPage.clickClearAllBtn();
 
 
 
