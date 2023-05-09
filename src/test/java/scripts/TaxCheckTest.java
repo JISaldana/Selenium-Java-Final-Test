@@ -37,11 +37,14 @@ public class TaxCheckTest {
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
 
+        // Add item to the cart
         HomePage homePage = new HomePage(driver);
         homePage.search(productParam);
         ProductSearchPage productSearchPage = homePage.search(productParam);
         ProductPage productPage = productSearchPage.clickProduct(productParam);
         Cart cart = productPage.addItem();
+
+        //Check if the taxes are correct
         assertEquals(cart.tax.getText(), taxParam);
 
 

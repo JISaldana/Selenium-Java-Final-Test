@@ -31,17 +31,17 @@ public class CheckPriceTest {
     @Test(dataProvider = "products", dataProviderClass = ProductData.class)
     public void priceCheck(String productParam, String priceParam, String taxParam) throws Exception {
 
-
+        // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
 
-        // Instantiate the HomePage class to access its methods.
+        //Add item to cart
         HomePage homePage = new HomePage(driver);
         homePage.search(productParam);
         ProductSearchPage productSearchPage = homePage.search(productParam);
         ProductPage productPage = productSearchPage.clickProduct(productParam);
         Cart cart = productPage.addItem();
+
+        //Check item price
         assertEquals(cart.price.getText(), priceParam);
-
-
     }
 }

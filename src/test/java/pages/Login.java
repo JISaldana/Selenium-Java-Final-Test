@@ -24,7 +24,7 @@ public class Login {
     @FindBy(id = "send2")
     public static WebElement loginBtn;
 
-//    @Step("Type credentials on form boxes")
+    //Type credentials on form boxes
     public void setCredentials (String email, String pass){
         emailBox.sendKeys(email);
         passBox.sendKeys(pass);

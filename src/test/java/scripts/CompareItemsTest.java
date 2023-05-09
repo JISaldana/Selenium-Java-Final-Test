@@ -39,11 +39,13 @@ public class CompareItemsTest {
         Login loginPage = new Login(driver);
         loginPage.setCredentials("juanignaciojobs@gmail.com", "Data123!");
         AccountPage accountPage = new AccountPage(driver);
+        // Clear all data before start
         accountPage.clickClearAllBtn();
 
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com/");
 
+        // Adds 2 items to the comparison list
         HomePage homePage = new HomePage(driver);
         homePage.search(productParam);
         ProductSearchPage productSearchPage = homePage.search(productParam);
@@ -53,6 +55,7 @@ public class CompareItemsTest {
         productSearchPage.clickProduct(productParam2);
         productPage.addToCompare();
 
+        // Go to my account page
         driver.get("http://magento-demo.lexiconn.com/customer/account/");
         CompareListPopUp compareListPopUp = accountPage.clickCompareBtn();
 
@@ -67,7 +70,7 @@ public class CompareItemsTest {
                 break;
             }
         }
-
+        //Check that both items have been successfully uploaded to the compare list
         String item1 = compareListPopUp.item1.getText();
         String item2 = compareListPopUp.item2.getText();
         assertEquals(productParam, item1);

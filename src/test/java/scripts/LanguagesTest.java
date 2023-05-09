@@ -36,6 +36,7 @@ public class LanguagesTest {
         // Navigate to the home page of the web application being tested.
         driver.get("http://magento-demo.lexiconn.com");
 
+        //Check if the text of the WebElements switch to the corresponding language
         HomePage homePage = new HomePage(driver);
         homePage.selectLang(lang);
 

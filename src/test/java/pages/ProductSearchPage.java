@@ -14,7 +14,7 @@ public class ProductSearchPage {
         PageFactory.initElements(driver, this);
     }
 
-//    @Step("Go to product page")
+    //Click product and go to product page
     public ProductPage clickProduct(String product) {
         WebElement productLink = driver.findElement(By.linkText(product)); // Finds the WebElement for the product link using the product name
         productLink.click(); // Clicks on the product link

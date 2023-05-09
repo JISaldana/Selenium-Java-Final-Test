@@ -19,7 +19,7 @@ public class HomePage {
     @FindBy(id = "select-language")
     public WebElement langDropdown;
 
-//    @Step("Select language")
+    //Select language from dropdown menu
     public void selectLang(String lang) {
         langDropdown.click();
         WebElement langSelected = driver.findElement(By.xpath("//option[.='" + lang + "']"));
@@ -36,7 +36,7 @@ public class HomePage {
     @FindBy(id = "search")
     public WebElement searchBar;
 
-//    @Step("Search the product")
+    //Search the product
     public ProductSearchPage search(String product){
         searchBar.sendKeys(product);
         searchBar.sendKeys(Keys.ENTER);
@@ -61,9 +61,5 @@ public class HomePage {
     public WebElement saleCategory;
     @FindBy(className = "nav-6")
     public WebElement vipCategory;
-
-
-
-
 
 }

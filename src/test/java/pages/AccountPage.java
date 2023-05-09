@@ -20,11 +20,12 @@ public class AccountPage {
     @FindBy (linkText = "Clear All")
     public WebElement clearAllBtn;
 
+    //Clear the comparison list
     public void clickClearAllBtn() {
         clearAllBtn.click();
         driver.switchTo().alert().accept();
     }
-
+    //Open the Compare List pop-up windows
     public CompareListPopUp clickCompareBtn(){
         compareBtn.click();
         return new CompareListPopUp(driver);

@@ -21,12 +21,12 @@ public class ProductPage {
     @FindBy (className = "link-compare")
     public WebElement addCompareListBtn;
 
-//    @Step("Add item to cart")
+    //Add item to cart
     public Cart addItem(){
         addCartBtn.click();
         return new Cart(driver);
     }
-//    @Step("Add item to compare list")
+    //Add item to compare list
     public void addToCompare(){
         addCompareListBtn.click();
     }
@@ -34,7 +34,7 @@ public class ProductPage {
     @FindBy(id = "search")
     public WebElement searchBar;
 
-    //    @Step("Search the product")
+    //Search the product
     public ProductSearchPage search(String product){
         searchBar.sendKeys(product);
         searchBar.sendKeys(Keys.ENTER);
