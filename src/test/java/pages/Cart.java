@@ -6,7 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class Cart {
-    private static WebDriver driver;
+
+    public static WebDriver driver;
     public Cart(WebDriver driver) {
         Cart.driver = driver;
         PageFactory.initElements(driver, this);
