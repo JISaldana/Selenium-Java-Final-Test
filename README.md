@@ -1,2 +1,2 @@
-### <span style="color: #8A2BE2;">SELENIUM JAVA FINAL TEST</span>
+### <span style="color: blue;">SELENIUM JAVA FINAL TEST</span>
 
