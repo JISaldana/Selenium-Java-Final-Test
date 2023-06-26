@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -24,12 +25,20 @@ public class Login {
     @FindBy(id = "send2")
     public static WebElement loginBtn;
 
-    //Type credentials on form boxes
-    public void setCredentials (String email, String pass){
+    @FindBy (className = "error-msg")
+    public WebElement accessErrorMsg;
+
+    public boolean existErrorMsg(){
+        return accessErrorMsg.isDisplayed();
+    }
+
+    @Step("Type credentials email: {email} and Password: {pass}")
+    public HomePage setCredentials (String email, String pass){
         emailBox.sendKeys(email);
         passBox.sendKeys(pass);
         loginBtn.click();
 
+        return new HomePage(driver);
     }
 
 }

@@ -7,7 +7,7 @@ public class CompareProductData {
     public static Object[][] getCompareProductData() {
         return new Object[][]{
                 {"LARGE CAMERA BAG", "RETRO CHIC EYEGLASSES"},
-                {"GRAMERCY THROW", "MADISON OVEREAR HEADPHONES"},
+                {"HANA FLAT, CHARCOAL", "MADISON OVEREAR HEADPHONES"},
         };
     }
 }

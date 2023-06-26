@@ -1,5 +1,6 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -29,19 +30,8 @@ public class HomePage {
     @FindBy(className = "welcome-msg")
     public WebElement welcomeMsg;
 
-    public String getMsgText(){
-        return welcomeMsg.getText();
-    }
-
     @FindBy(id = "search")
     public WebElement searchBar;
-
-    //Search the product
-    public ProductSearchPage search(String product){
-        searchBar.sendKeys(product);
-        searchBar.sendKeys(Keys.ENTER);
-        return new ProductSearchPage(driver);
-    }
 
     @FindBy(className = "skip-account")
     public WebElement accountBtn;
@@ -51,15 +41,35 @@ public class HomePage {
 
     @FindBy(className = "nav-1")
     public WebElement womenCategory;
+
     @FindBy(className = "nav-2")
     public WebElement menCategory;
+
     @FindBy(className = "nav-3")
     public  WebElement accessoriesCategory;
+
     @FindBy(className = "nav-4")
     public WebElement hndCategory;
+
     @FindBy(className = "nav-5")
     public WebElement saleCategory;
+
     @FindBy(className = "nav-6")
     public WebElement vipCategory;
+
+    @FindBy(linkText = "login")
+    private WebElement lgoinBtn;
+
+    @Step ("Search the product {product}")
+    public ProductSearchPage search(String product){
+        searchBar.sendKeys(product);
+        searchBar.sendKeys(Keys.ENTER);
+        return new ProductSearchPage(driver);
+    }
+
+    @Step ("Get welcome text")
+    public String getMsgText(){
+        return welcomeMsg.getText();
+    }
 
 }

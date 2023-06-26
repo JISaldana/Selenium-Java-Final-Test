@@ -1,16 +1,10 @@
 package pages;
 
-
-import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
-import java.time.Instant;
 
 public class AccountPage {
 
@@ -26,14 +20,14 @@ public class AccountPage {
     @FindBy (linkText = "Clear All")
     public WebElement clearAllBtn;
 
-    //Clear the comparison list
+    @Step("Clear compare list")
     public void clickClearAllBtn() {
             clearAllBtn.click();
             driver.switchTo().alert().accept();
             System.out.println("There are no more items in the compare list, waiting for the next test. ");
         }
 
-    //Open the Compare List pop-up windows
+    @Step("Open compare list")
     public CompareListPopUp clickCompareBtn(){
         compareBtn.click();
         return new CompareListPopUp(driver);

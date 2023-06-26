@@ -7,8 +7,8 @@ public class LoginData {
     public static Object[][] getsLoginData() {
         return new Object[][]{
                 {"juanignaciojobs@gmail.com", "Data123!"},
-                {"juanignaciojobs@gmail.com", "n-a"},
-                {"n-a@n-a", "Data123!"},
+                {"juanignaciojobs@gmail.com", "n-an-a"},
+                {"n-a@n-a.com", "Data123!"},
         };
     }
 }

@@ -71,6 +71,7 @@ public class CompareItemsTest {
                 break;
             }
         }
+
         //Check that both items have been successfully uploaded to the compare list
         String item1 = compareListPopUp.item1.getText();
         String item2 = compareListPopUp.item2.getText();

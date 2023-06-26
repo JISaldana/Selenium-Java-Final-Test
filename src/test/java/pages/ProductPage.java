@@ -1,6 +1,7 @@
 package pages;
 
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,20 +22,21 @@ public class ProductPage {
     @FindBy (className = "link-compare")
     public WebElement addCompareListBtn;
 
-    //Add item to cart
+    @FindBy(id = "search")
+    public WebElement searchBar;
+
+    @Step ("Add item to cart")
     public Cart addItem(){
         addCartBtn.click();
         return new Cart(driver);
     }
-    //Add item to compare list
+
+    @Step ("Add item to compare list")
     public void addToCompare(){
         addCompareListBtn.click();
     }
 
-    @FindBy(id = "search")
-    public WebElement searchBar;
-
-    //Search the product
+    @Step ("Searching for a {product}")
     public ProductSearchPage search(String product){
         searchBar.sendKeys(product);
         searchBar.sendKeys(Keys.ENTER);
