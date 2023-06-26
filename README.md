@@ -16,3 +16,6 @@
  - [x] Languages
  - [x] Login
 
+# Final Report 
+
+[Report PDF](https://drive.google.com/file/d/1SUjcdISWZgCdzipHjIQwUvNRkI_K2yOK/view?usp=sharing) 
