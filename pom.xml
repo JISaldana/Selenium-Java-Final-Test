@@ -10,9 +10,9 @@
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <groupId>.FinalTest</groupId>
-  <artifactId>qa-automation</artifactId>
+  <artifactId>Selenium-Java-Final-Test</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>qa-automation</name>
+  <name>Selenium-Java-Final-Test</name>
   <description>Automate testing for Madison Island</description>
 
   <properties>
